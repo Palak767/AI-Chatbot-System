@@ -1,38 +1,49 @@
-AI Chatbot System - Command Line Interface (CLI)
+# AI Chatbot System (Java GUI + Servlet)
 
-==================================================
+## Project Overview
+This project is a Java-based AI Chatbot System developed as a college assignment.
+It uses a Swing-based GUI frontend and a Servlet-based backend to communicate
+with an AI model using REST APIs.
 
-Project Description:This is a single-file Java application designed to simulate a complete AI chatbot system dashboard. It includes a user-facing chat interface for real-time interaction and an administrative interface for configuration management and simulated model updates.
+## Technologies Used
+- Java (Swing for GUI)
+- Java Servlet (Backend)
+- HTTP & JSON
+- Gemini AI API
+- Apache Tomcat Server
 
-It demonstrates resilient API communication with the Google Gemini API using the built-in Java 11+ HttpClient and implements an exponential backoff strategy for handling network and rate-limiting issues.
-Requirements:
-.Java Development Kit (JDK) 11 or later
-.Internet connectivity to communicate with the Gemini API.
+## System Architecture
+User Interface (Swing)
+        ↓
+HTTP POST Request (JSON)
+        ↓
+ChatServlet (Backend)
+        ↓
+ChatProxyServer
+        ↓
+Gemini AI API
+        ↓
+JSON Response back to GUI
 
-API Key:The GeminiApiClient class includes a placeholder for the API key (private static final String API_KEY = "";). In a production environment, this should be loaded securely from environment variables. For this execution environment, it is designed to use the system-provided key.
+## Core Features
+- Interactive AI Chat Interface
+- Backend Servlet Processing
+- JSON-based Communication
+- Input Validation & Error Handling
+- Configurable AI Persona
+- Clean Modular Code Structure
 
-Files in this Project:
+## Error Handling & Validation
+- Empty input validation
+- Message length restriction
+- Backend exception handling
+- Safe JSON escaping
 
-1. AIChatbotSystem.java: The complete, single-file source code for the application.
-2. build.sh: A simple shell script for compilation and execution (for Unix-like systems).
-3. README.txt: This file.
+## How to Run the Project
+1. Deploy the project on Apache Tomcat
+2. Start the Tomcat server
+3. Run `AIChatbotSystem.java`
+4. Enter messages in the chat interface
 
-
-EXECUTION INSTRUCTIONS (Linux/macOS):
-1. Compile the Java file:./build.sh compile
-
-    OR: javac AIChatbotSystem.java
-2. Run the compiled application:./build.sh run
-
-    OR: java AIChatbotSystem
-
-
-EXECUTION INSTRUCTIONS (Windows Command Prompt):
-1. Compile the Java file:javac AIChatbotSystem.java
-2. Run the compiled application:java AIChatbotSystem
-
-Application Features:
-. User Dashboard: Start a live chat session with the AI
-. Admin Dashboard: Update the AI's internal response templates and knowledge base (which affect the system prompt)
-. History Viewer: See a log of all previous interactions
-. Exponential Backoff: The API client automatically retries failed requests with increasing delays.
+## Innovation
+The project integrates an AI-powered chatbot with a Java Swing interface using servlet-based backend communication, demonstrating real-world client-server architecture.
