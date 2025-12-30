@@ -9,7 +9,7 @@ import java.util.concurrent.*;
  */
 public class ChatProxyServer {
     private static final int PORT = 8080;
-    private static final String API_KEY = "AIzaSyBG-M1M2o7MnYAoiA9wM2TVBXkJ89zWVvM"; // Gemini API Key goes here
+    private static final String API_KEY = ""; // Gemini API Key goes here
     private static final String API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" + API_KEY;
 
     public static void main(String[] args) {
@@ -95,4 +95,5 @@ public class ChatProxyServer {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'processUserMessage'");
     }
+
 }
